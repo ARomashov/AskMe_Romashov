@@ -1,0 +1,82 @@
+* {
+    color: white;
+}
+.user_logo {
+    height:100%;
+    max-height: 40px;
+}
+
+.username {
+    color: white;
+}
+main {
+    min-height: 90vh;
+}
+
+input, textarea {
+    border: 1px solid rgb(62 68 75);
+    outline: none;
+}
+.tags .badge {
+    margin: 3px;
+}
+
+.list-group .list-group-item {
+    border: 1px solid RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
+    background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
+}
+
+.footer {
+    background-color: rgb(26 30 33);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(105, 165, 255);
+}
+
+.badge {
+    font-size: 16px;
+}
+
+.card-title {
+    color: white;
+}
+
+.card {
+    background-color: rgb(47 50 52);
+}
+
+.avatar {
+    height: 75px;
+    width: 75px;
+}
+
+.avatar img {
+    height: 75px;
+    width: 75px;
+}
+
+.likes {
+    width: 20%;
+}
+
+.likes:active {
+    border: none;
+    outline: none;
+}
+
+.pagination {
+    --bs-pagination-bg: var(--bs-dark-rgb);
+    --bs-pagination-hover-bg: var(--bs-dark-rgb);
+    --bs-pagination-focus-bg: var(--bs-dark-rgb);
+    --bs-pagination-color: var(--bs-dark-rgb);
+    --bs-pagination-focus-box-shadow: none;
+}
+
+.ask_field input, textarea {
+    width:90%;
+}
+
+.settings_field input {width:75%}
+
