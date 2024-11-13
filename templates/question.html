@@ -1,0 +1,63 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block user %}
+    {% include 'layouts/logged_out_user.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="question">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <img src="../static/img/user_logo.png" alt="Avatar"
+                     style="max-height: 150px; max-width: 150px;">
+            </div>
+            <input type="number" class="form_control bg-dark likes" value="5">
+        </div>
+        <div class="col">
+            <h2>{{ question.title }}</h2>
+            <p class="mb-4">{{ question.text }}.</p>
+            <div class="card-tags">
+                Tags:
+                {% for tag in tags %}
+                <a href="{% url 'tag' tag %}" class="card-link">{{ tag }}</a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="answers cards d-flex flex-column gap-4">
+    {% for answer in answers %}
+    <div class="card w-100" style="width: 18rem;">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-3">
+                    <div class="border border-dark avatar mb-2">
+                        <img src="{% static answer.user_avatar %}" alt="AVATAR">
+                    </div>
+
+                    <input type="number" class="form_control bg-dark likes" value="5">
+                </div>
+                <div class="col-9">
+                    <p class="card-text">{{ answer.answer }}</p>
+                    <div class="d-flex">
+                        <input type="checkbox" style="zoom: 1.5;" class="me-1">
+                        Correct!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<hr>
+<form action="">
+    <textarea name="answer" id="" cols="30" rows="10" placeholder="Enter your answer here.."
+              class="d-block bg-dark w-100 mb-3"></textarea>
+    <button type="submit" class="btn btn-success">Answer</button>
+</form>
+{% endblock %}

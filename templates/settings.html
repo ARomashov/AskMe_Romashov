@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block user %}
+    {% include 'layouts/auth_user.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Settings: Valera</h1>
+<p class="text-danger">Invalid email</p>
+<form action="" class="settings mt-4 mx-4 w-50">
+    <div class="d-flex flex-column gap-3 mb-3">
+        <div class="d-flex settings_field">
+            <label for="login">Login</label>
+            <input type="text" id="login" value="{{ user.login }}" minlength="3"
+                   maxlength="32" class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="email">Email</label>
+            <input type="email" id="email" value="{{ user.email }}" minlength="12" maxlength="32"
+                   class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="nickname">NickName</label>
+            <input type="text" id="nickname" value="{{ user.nickname }}" class="bg-dark ms-auto" minlength="3"
+                   maxlength="32">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="avatar">Upload avatar</label>
+            <div class="ms-auto w-75">
+                <img src="{% static user.avatar %}" alt="Avatar" style="height:75px;" class="d-block mb-3">
+                <input type="file" id="avatar" class="bg-dark">
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success">Save</button>
+</form>
+{% endblock %}

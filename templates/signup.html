@@ -1,0 +1,45 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block user %}
+    {% include 'layouts/logged_out_user.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Registration</h1>
+<p class="text-danger">Sorry, this email address already registered!</p>
+<form action="" class="settings my-4 w-50">
+    <div class="d-flex flex-column gap-3 mb-3">
+        <div class="d-flex settings_field">
+            <label for="login">Login</label>
+            <input type="text" id="login" placeholder="Enter your login" minlength="3"
+                   maxlength="32" class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" minlength="12" maxlength="32"
+                   class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="nickname">NickName</label>
+            <input type="text" id="nickname" placeholder="Enter your nickname" class="bg-dark ms-auto" minlength="3"
+                   maxlength="32">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password" minlength="5" maxlength="32"
+                   class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="repeat_password">Password</label>
+            <input type="password" id="repeat_password" placeholder="Repeat password" minlength="5" maxlength="32"
+                   class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="avatar">Upload avatar</label>
+            <input type="file" id="avatar" class="bg-dark ms-auto">
+        </div>
+    </div>
+    <button class="btn btn-success">Register</button>
+</form>
+{% endblock %}

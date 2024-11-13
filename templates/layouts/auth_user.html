@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="user">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="{% static '/img/user_logo.png'%}" class="user_logo" alt="">
+                    </div>
+                    <div class="col">
+                        <div class="username">Valera</div>
+                        <div class="d-flex align-center">
+                            <a href="{% url 'settings' %}" class="pe-2">settings</a>
+                            <a href="">log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>

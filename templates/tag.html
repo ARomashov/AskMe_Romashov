@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block user %}
+    {% include 'layouts/auth_user.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center mb-3">
+    <h1 class="me-3">Tag: {{ tag }}</h1>
+</div>
+{% include 'layouts/card_list.html' %}
+{% include 'layouts/pagination.html' %}
+{% endblock %}
+

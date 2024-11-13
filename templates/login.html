@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block user %}
+    {% include 'layouts/logged_out_user.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Log In</h1>
+<p class="text-danger">Sorry, wrong password!</p>
+<form action="" class="settings my-4 w-50">
+    <div class="d-flex flex-column gap-3 mb-3">
+        <div class="d-flex settings_field">
+            <label for="login">Login</label>
+            <input type="text" id="login" placeholder="Enter your login" minlength="3"
+                   maxlength="32" class="bg-dark ms-auto">
+        </div>
+        <div class="d-flex settings_field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" minlength="5" maxlength="32"
+                   class="bg-dark ms-auto">
+        </div>
+    </div>
+    <button class="btn btn-success">Log in</button>
+</form>
+<a href="{% url 'signup' %}">create new account</a>
+{% endblock %}

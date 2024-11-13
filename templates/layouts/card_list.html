@@ -1,0 +1,35 @@
+{% load static %}
+<div class="cards pe-5 pb-3 d-flex flex-column gap-4">
+    {% for question in questions %}
+    <div class="card w-100" style="width: 18rem;">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-3">
+                    <div class="border border-dark avatar mb-2">
+                        <img src="{% static 'img/user_logo.png' %}" alt="AVATAR">
+                    </div>
+
+                    <input type="number" class="form_control bg-dark likes" value="5">
+                </div>
+                <div class="col-9">
+                    <h5 class="card-title"><a href="{% url 'question' question.id %}">{{ question.title }}</a></h5>
+                    <p class="card-text">{{ question.text }}</p>
+                    <div class="d-flex gap-5">
+
+                        <a href="{% url 'question' question.id %}" class="card-link">Answer (3)</a>
+
+
+                        <div class="card-tags">
+                            Tags:
+                            {% for tag in tags %}
+                            <a href="{% url 'tag' tag %}" class="card-link">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
